@@ -88,11 +88,6 @@ img{
     50%{opacity:1;}
     100%{transform:translateY(-10vh);opacity:0;}
 }
-
-#countdown{
-    font-size:18px;
-    margin-top:10px;
-}
 </style>
 </head>
 
@@ -105,11 +100,8 @@ img{
 
 <div id="main">
     <h1>Jagu 💕</h1>
-
-    <!-- ADD HER PHOTO HERE -->
     <img src="jagu.jpg.jpeg" alt="Jagu">
-
-        <div id="typeText"></div>
+    <div id="typeText"></div>
 
     <div>
         <button id="yes">Yes 💍</button>
@@ -118,17 +110,11 @@ img{
     </div>
 </div>
 
-</div>
-
 <audio id="music" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-
-
-<script>
-
 const intro=document.getElementById("intro");
 const main=document.getElementById("main");
 const music=document.getElementById("music");
@@ -154,15 +140,12 @@ function typeWriter(){
     }
 }
 
-
-// No runs away
 document.getElementById("no").onmouseover=function(){
     this.style.position="absolute";
     this.style.left=Math.random()*80+"%";
     this.style.top=Math.random()*80+"%";
 }
 
-// Yes clicked
 document.getElementById("yes").onclick=function(){
     document.body.innerHTML=`
         <div style="margin-top:150px;">
@@ -172,7 +155,6 @@ document.getElementById("yes").onclick=function(){
         </div>`;
 }
 
-// Floating hearts
 function createHeart(){
     const heart=document.createElement("div");
     heart.classList.add("heart");
@@ -184,7 +166,6 @@ function createHeart(){
 }
 setInterval(createHeart,500);
 
-// Our Story popup
 function showStory(){
     document.getElementById("storyModal").style.display="block";
 }
@@ -192,9 +173,8 @@ function showStory(){
 function closeStory(){
     document.getElementById("storyModal").style.display="none";
 }
-
-
 </script>
+
 <!-- STORY MODAL -->
 <div id="storyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); overflow:auto; z-index:999;">
     <div style="background:white; color:#333; width:80%; max-width:700px; margin:80px auto; padding:30px; border-radius:15px; text-align:left; position:relative;">
@@ -205,43 +185,19 @@ function closeStory(){
 
         <p>
         We didn’t fall in love dramatically like in movies.<br><br>
-
         No slow-motion wind.<br>
         No violin music.<br>
         No pigeons flying in the background.<br><br>
-
         It started normally…<br><br>
-
         One random conversation.<br>
         One random smile.<br>
         One random moment that wasn’t random at all.<br><br>
-
-        At first, I told myself: “She’s just nice.”<br>
-        Then I said: “She’s just funny.”<br>
-        Then I said: “Okay Uday, stop smiling at your phone.”<br><br>
-
         But Jagu had already done something dangerous —<br>
         She made my ordinary days feel special.<br><br>
-
-        My phone battery started dying faster (because of her).<br>
-        I started checking notifications every 5 minutes (because of her).<br>
-        I started smiling for no reason (definitely because of her).<br><br>
-
-        She didn’t enter my life like a storm.<br>
-        She entered like comfort.<br>
-        Like peace.<br>
-        Like that one song you never skip.<br><br>
-
-        Somewhere between silly jokes and random talks…<br>
-        You became my favorite notification.<br>
-        My favorite distraction.<br>
-        My favorite person.<br><br>
-
         So Jagu,<br>
         Let’s continue this story.<br>
         Because I think the best part…<br>
         Is just beginning.<br><br>
-
         ~ Uday ❤️
         </p>
     </div>
@@ -249,6 +205,3 @@ function closeStory(){
 
 </body>
 </html>
-
-
-
