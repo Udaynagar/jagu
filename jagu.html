@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Jagu 💖</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+    text-align:center;
+    overflow:hidden;
+    color:white;
+}
+
+#intro{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    font-size:30px;
+    cursor:pointer;
+}
+
+#main{
+    display:none;
+    padding-top:80px;
+}
+
+h1{
+    font-size:50px;
+}
+
+#typeText{
+    font-size:22px;
+    width:80%;
+    margin:auto;
+    min-height:60px;
+}
+
+button{
+    padding:15px 35px;
+    font-size:22px;
+    border-radius:50px;
+    border:none;
+    cursor:pointer;
+    margin:15px;
+    transition:0.3s;
+}
+
+#yes{
+    background:#ff2e63;
+    color:white;
+    box-shadow:0 0 20px #ff2e63;
+}
+
+#no{
+    background:#444;
+    color:white;
+    position:relative;
+}
+
+img{
+    width:220px;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.heart{
+    position:absolute;
+    color:#fff;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh);opacity:0;}
+    50%{opacity:1;}
+    100%{transform:translateY(-10vh);opacity:0;}
+}
+
+#countdown{
+    font-size:18px;
+    margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="intro">
+    <div>Close your eyes Jagu 💖</div>
+    <div style="font-size:18px;">Tap to begin something special ✨</div>
+</div>
+
+<div id="main">
+    <h1>Jagu 💕</h1>
+
+    <!-- ADD HER PHOTO HERE -->
+    <img src="jagu.jpg.jpeg" alt="Jagu">
+
+        <div id="typeText"></div>
+
+    <div>
+        <button id="yes">Yes 💍</button>
+        <button id="no">No 🙃</button>
+        <button onclick="showStory()">Our Story 📖</button>
+    </div>
+</div>
+
+<audio id="music" loop>
+<!-- Replace with your romantic mp3 -->
+<source src="your-song.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+const intro=document.getElementById("intro");
+const main=document.getElementById("main");
+const music=document.getElementById("music");
+
+intro.onclick=()=>{
+    intro.style.display="none";
+    main.style.display="block";
+    music.play();
+    typeWriter();
+}
+
+const text="From the moment you entered my life, everything changed. You became my peace, my chaos, my forever. Jagu... will you be mine?";
+let i=0;
+
+function typeWriter(){
+    if(i<text.length){
+        document.getElementById("typeText").innerHTML+=text.charAt(i);
+        i++;
+        setTimeout(typeWriter,40);
+    }
+}
+
+
+// No runs away
+document.getElementById("no").onmouseover=function(){
+    this.style.position="absolute";
+    this.style.left=Math.random()*80+"%";
+    this.style.top=Math.random()*80+"%";
+}
+
+// Yes clicked
+document.getElementById("yes").onclick=function(){
+    document.body.innerHTML=`
+        <div style="margin-top:150px;">
+        <h1 style="font-size:60px;">She Said YES 💍💖</h1>
+        <p>This is the beginning of forever, Jagu ✨</p>
+        <div style="font-size:100px;">💎💖💎</div>
+        </div>`;
+}
+
+// Floating hearts
+function createHeart(){
+    const heart=document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=Math.random()*20+15+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+}
+setInterval(createHeart,500);
+
+// Our Story popup
+function showStory(){
+    document.getElementById("storyModal").style.display="block";
+}
+
+function closeStory(){
+    document.getElementById("storyModal").style.display="none";
+}
+
+
+</script>
+<!-- STORY MODAL -->
+<div id="storyModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); overflow:auto; z-index:999;">
+    <div style="background:white; color:#333; width:80%; max-width:700px; margin:80px auto; padding:30px; border-radius:15px; text-align:left; position:relative;">
+        
+        <span onclick="closeStory()" style="position:absolute; right:20px; top:15px; font-size:25px; cursor:pointer;">✖</span>
+
+        <h2 style="text-align:center; color:#ff2e63;">Our Story 💕</h2>
+
+        <p>
+        We didn’t fall in love dramatically like in movies.<br><br>
+
+        No slow-motion wind.<br>
+        No violin music.<br>
+        No pigeons flying in the background.<br><br>
+
+        It started normally…<br><br>
+
+        One random conversation.<br>
+        One random smile.<br>
+        One random moment that wasn’t random at all.<br><br>
+
+        At first, I told myself: “She’s just nice.”<br>
+        Then I said: “She’s just funny.”<br>
+        Then I said: “Okay Uday, stop smiling at your phone.”<br><br>
+
+        But Jagu had already done something dangerous —<br>
+        She made my ordinary days feel special.<br><br>
+
+        My phone battery started dying faster (because of her).<br>
+        I started checking notifications every 5 minutes (because of her).<br>
+        I started smiling for no reason (definitely because of her).<br><br>
+
+        She didn’t enter my life like a storm.<br>
+        She entered like comfort.<br>
+        Like peace.<br>
+        Like that one song you never skip.<br><br>
+
+        Somewhere between silly jokes and random talks…<br>
+        You became my favorite notification.<br>
+        My favorite distraction.<br>
+        My favorite person.<br><br>
+
+        So Jagu,<br>
+        Let’s continue this story.<br>
+        Because I think the best part…<br>
+        Is just beginning.<br><br>
+
+        ~ Uday ❤️
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
